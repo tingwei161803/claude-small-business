@@ -43,11 +43,13 @@
     tocToggle.addEventListener('click', () => {
       const open = toc.dataset.open === 'true';
       toc.dataset.open = open ? 'false' : 'true';
+      tocToggle.setAttribute('aria-expanded', toc.dataset.open === 'true' ? 'true' : 'false');
     });
     document.querySelectorAll('.toc__item a').forEach((a) => {
       a.addEventListener('click', () => {
         if (window.matchMedia('(max-width: 960px)').matches) {
           toc.dataset.open = 'false';
+          if (tocToggle) tocToggle.setAttribute('aria-expanded', 'false');
         }
       });
     });
@@ -143,6 +145,8 @@
     // Chinese pages get Chinese labels; everything else falls back to English.
     const isZh = (document.documentElement.lang || '').toLowerCase().startsWith('zh');
     const LABELS = isZh ? { copy: '複製', copied: '已複製' } : { copy: 'Copy', copied: 'Copied' };
+    // Screen-reader announcement pushed to the card's aria-live status node on success.
+    const COPIED_MESSAGE = isZh ? 'Prompt 已複製到剪貼簿' : 'Prompt copied to clipboard';
 
     // Best-effort copy: prefer the async Clipboard API, fall back to execCommand.
     function copyText(text) {
@@ -173,6 +177,7 @@
 
     buttons.forEach((btn) => {
       // Resolve the default label once: explicit attr first, then current text.
+      // data-label-default is an optional override hook; no HTML sets it today.
       const defaultLabel = btn.dataset.labelDefault || btn.textContent.trim() || LABELS.copy;
       let timer = null;
 
@@ -183,14 +188,18 @@
         const text = (code.textContent || '').trim();
         if (!text) return;
 
+        const status = card ? card.querySelector('.prompt-card__status') : null;
+
         copyText(text)
           .then(() => {
             btn.dataset.copied = 'true';
             btn.textContent = LABELS.copied;
+            if (status) status.textContent = COPIED_MESSAGE;
             if (timer) clearTimeout(timer);
             timer = setTimeout(() => {
               btn.dataset.copied = 'false';
               btn.textContent = defaultLabel;
+              if (status) status.textContent = '';
             }, 1800);
           })
           .catch(() => { /* clipboard unavailable — leave the button untouched */ });
@@ -212,7 +221,7 @@
 
     try {
       const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-      if (cached && Date.now() - cached.t < TTL) render(cached.n);
+      if (cached && typeof cached.n === 'number' && Date.now() - cached.t < TTL) render(cached.n);
     } catch (e) { /* private mode / bad cache — ignore */ }
 
     fetch(`https://api.github.com/repos/${REPO}`, { headers: { Accept: 'application/vnd.github+json' } })

@@ -4,18 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Claude for Small Business · 台灣老闆白話導讀</title>
-<meta name="description" content="把 Anthropic 的 Claude for Small Business 用白話比喻講給沒有 IT 部門的台灣小老闆聽 — 15 道現成工作流、接你既有工具、不會算錯的會計、自帶設計師的行銷助理，含手把手安裝與 8 個情境 prompt。中英雙語。">
+<meta name="description" content="把 Anthropic 的 Claude for Small Business 用白話比喻講給沒有 IT 部門的台灣小老闆聽：15 道現成工作流、接你既有工具、手把手安裝與 8 個台灣情境 prompt。中英雙語。">
+<link rel="canonical" href="https://tingwei161803.github.io/claude-small-business/">
+<link rel="alternate" hreflang="zh-Hant" href="https://tingwei161803.github.io/claude-small-business/">
+<link rel="alternate" hreflang="en" href="https://tingwei161803.github.io/claude-small-business/en/">
+<link rel="alternate" hreflang="x-default" href="https://tingwei161803.github.io/claude-small-business/">
 <meta property="og:title" content="Claude for Small Business · 台灣老闆白話導讀">
 <meta property="og:description" content="一個人也撐得起整間店的 24 小時 AI 兼職 — 白話比喻、台灣對照、手把手安裝。">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://tingwei161803.github.io/claude-small-business/">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Claude for Small Business · 台灣老闆白話導讀">
+<meta property="og:image" content="https://tingwei161803.github.io/claude-small-business/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Claude for Small Business · 台灣老闆白話導讀">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude for Small Business · 台灣老闆白話導讀">
+<meta name="twitter:description" content="一個人也撐得起整間店的 24 小時 AI 兼職 — 白話比喻、台灣對照、手把手安裝。">
+<meta name="twitter:image" content="https://tingwei161803.github.io/claude-small-business/assets/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='10' height='10' x='3' y='3' fill='%23CC785C' transform='rotate(45 8 8)'/%3E%3Crect width='4' height='4' x='6' y='6' fill='%23F0EEE6' transform='rotate(45 8 8)'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude for Small Business · 台灣老闆白話導讀",
+  "description": "把 Anthropic 的 Claude for Small Business 用白話比喻講給沒有 IT 部門的台灣小老闆聽。",
+  "inLanguage": "zh-Hant",
+  "datePublished": "2026-05-13",
+  "dateModified": "2026-05-21",
+  "author": { "@type": "Person", "name": "tingwei161803" },
+  "publisher": { "@type": "Person", "name": "tingwei161803" },
+  "mainEntityOfPage": "https://tingwei161803.github.io/claude-small-business/",
+  "image": "https://tingwei161803.github.io/claude-small-business/assets/og-cover.png",
+  "isBasedOn": "https://www.anthropic.com/news/claude-for-small-business"
+}
+</script>
 </head>
 <body>
+
+<a class="skip-link" href="#maincontent">跳到主要內容</a>
 
 <div class="progress" aria-hidden="true"></div>
 
@@ -24,7 +57,7 @@
     <a class="brand" href="#cover" aria-label="Claude for Small Business 台灣導讀 首頁">
       <span class="brand__mark" aria-hidden="true"></span>
       <span>Claude for Small Business</span>
-      <span class="brand__sep">·</span>
+      <span class="brand__sep" aria-hidden="true">·</span>
       <span class="brand__sub">台灣老闆白話導讀</span>
     </a>
     <div class="site-header__actions">
@@ -35,8 +68,8 @@
         <span class="ghstar__count" hidden></span>
       </a>
       <nav class="lang-switch" aria-label="語言 Language">
-        <a href="./" aria-current="true">中</a>
-        <a href="./en/" data-lang-link>EN</a>
+        <a href="./" aria-current="page">中</a>
+        <a href="./en/" data-lang-link lang="en">EN</a>
       </nav>
     </div>
   </div>
@@ -46,8 +79,8 @@
 
   <!-- ============ TOC ============ -->
   <aside class="toc" aria-label="目錄">
-    <button class="toc__toggle" type="button">目錄</button>
-    <div class="toc__panel">
+    <button class="toc__toggle" type="button" aria-expanded="false" aria-controls="toc-panel">目錄</button>
+    <div class="toc__panel" id="toc-panel">
       <p class="toc__label">目錄</p>
       <ol class="toc__list">
         <li class="toc__item" data-target="cover"><a href="#cover"><span class="toc__num">00</span>這份導讀</a></li>
@@ -74,7 +107,7 @@
   </aside>
 
   <!-- ============ MAIN ============ -->
-  <main class="main">
+  <main class="main" id="maincontent" tabindex="-1">
 
     <!-- ====== Cover / Hero ====== -->
     <section class="section hero" id="cover">
@@ -173,7 +206,7 @@
         <p>過去 AI 像是大企業的軍備：要養資料團隊、要客製系統、要燒錢。小店連門票都買不起。Anthropic 這次的角度很直接 —— 第一個專門設計給「沒有 IT 部門的老闆」的工具。</p>
       </div>
 
-      <blockquote class="pullquote">
+      <blockquote class="pullquote" lang="en">
         Small businesses make up nearly half the American economy, but they've never had the resources of bigger companies. AI is the first technology that can finally close that gap.
         <span class="pullquote__attr">Daniela Amodei · Anthropic 共同創辦人暨總裁</span>
       </blockquote>
@@ -302,14 +335,14 @@
         <p class="tw-note__label">🇹🇼 台灣對照 · 工具替換表</p>
         <div class="tw-note__body">
           <ul>
-            <li><strong>QuickBooks</strong> → 鼎新、Excel（很多台灣小店其實還是 Excel 起家）</li>
-            <li><strong>PayPal / Stripe / Square</strong> → 綠界、藍新、街口、Line Pay</li>
-            <li><strong>HubSpot</strong> → 行動百分百、Salesforce</li>
-            <li><strong>Docusign</strong> → iSign、Adobe Sign</li>
+            <li><strong>QuickBooks</strong> → 鼎新、Excel（很多台灣小店其實還是 Excel 起家；想比 Excel 進階、又比 ERP 輕量，可看雲端記帳 Xero、財報雲）</li>
+            <li><strong>PayPal / Stripe / Square</strong> → 金流閘道有 綠界（ECPay）、藍新（NewebPay）；消費端錢包則是 LINE Pay、街口支付</li>
+            <li><strong>HubSpot</strong> → Vital CRM（叡揚）、鼎新 CRM、Salesforce；做熟客／會員經營的店家則常用 Ocard</li>
+            <li><strong>Docusign</strong> → DottedSign 點點簽（台灣本土、已過數位發展部登錄）、Adobe Acrobat Sign</li>
             <li><strong>Slack</strong> → LINE、Teams</li>
             <li><strong>Canva · Google Workspace · Microsoft 365</strong> → 台灣同樣常用，可直接接</li>
           </ul>
-          <p>⚠️ 老實說：台灣在地服務（綠界、街口、鼎新…）目前不一定有官方原生整合。實務上你可以先用「能接的」（Canva、Google、Microsoft、QuickBooks），其他用匯出檔（Excel/CSV）丟給它讀，一樣能跑對帳、分析。</p>
+          <p>⚠️ 老實說：台灣在地服務（綠界、街口、鼎新…）目前不一定有官方原生整合。實務上你可以先用「能接的」（Canva、Google、Microsoft、QuickBooks），其他用匯出檔（Excel/CSV）丟給它讀 —— 而綠界、藍新這些後台本來就支援匯出對帳檔，所以「匯出再丟給 AI」對台灣老闆幾乎零學習成本，一樣能跑對帳、分析。</p>
         </div>
       </aside>
     </section>
@@ -346,6 +379,7 @@
         <p class="tw-note__label">🇹🇼 台灣對照</p>
         <div class="tw-note__body">
           <p>台灣老闆的金流多半散在 LINE Pay、街口、現金、外送平台後台。就算這些沒有原生整合，你也可以把各平台的對帳單匯出成 Excel/CSV，丟進去讓它幫你比對、抓差異 —— 月結的苦工一樣能省。月底前先讓它跑一次，看它找出多少你沒發現的差異，通常比你想的多。</p>
+          <p>另外，台灣店家的營收多半綁<strong>電子發票</strong>（透過綠界、藍新、ezPay 等開立），這些後台都能匯出發票／對帳明細 CSV —— 正好丟給它跑月結、抓漏開或重複的發票。</p>
         </div>
       </aside>
     </section>
@@ -380,7 +414,8 @@
       <aside class="tw-note">
         <p class="tw-note__label">🇹🇼 台灣對照</p>
         <div class="tw-note__body">
-          <p>台灣電商的客戶資料常在蝦皮後台、IG/FB 私訊、官網訂單裡。你可以把訂單與客戶清單匯出，讓它分析「弱月份、品項組合、回購客群」。多半它會看到你沒意識到的機會 —— 例如某個時段、某種組合特別好賣。AI 出的策略當參考，最後拍板的還是最懂客人的你。</p>
+          <p>台灣電商的客戶資料常在蝦皮（Shopee）後台、IG／FB 私訊、官網訂單裡。你可以把訂單與客戶清單匯出，讓它分析「弱月份、品項組合、回購客群」。多半它會看到你沒意識到的機會 —— 例如某個時段、某種組合特別好賣。AI 出的策略當參考，最後拍板的還是最懂客人的你。</p>
+          <p>台灣店家的熟客經營更常靠 <strong>LINE 官方帳號</strong>（預約、推播、集點）。你可以把 LINE 官方帳號後台的好友標籤、互動紀錄匯出，讓它幫你分群、擬推播文案 —— 對美甲美容、手搖飲、補習班、餐飲這類靠 LINE 養客的店特別有感。</p>
         </div>
       </aside>
     </section>
@@ -397,17 +432,17 @@
         <div class="story">
           <p class="story__tag">☕ 咖啡 · Purity Coffee</p>
           <p class="story__name">Brian Ludviksen · COO</p>
-          <p class="story__body">「它不只幫我解決問題，還讓我看到那些我自己根本沒發現的問題。」<br><em>啟示：一個會主動指出你盲點的同事，對小老闆超有價值。</em></p>
+          <p class="story__body"><span lang="en">「Not only could it problem-solve for me, it also showed me problems I didn't know I had.」</span><br>「它不只幫我解決問題，還讓我看到那些我自己根本沒發現的問題。」<br><em>啟示：一個會主動指出你盲點的同事，對小老闆超有價值。</em></p>
         </div>
         <div class="story">
           <p class="story__tag">🥤 水壺 · Simple Modern</p>
           <p class="story__name">Mike Beckham · CEO</p>
-          <p class="story__body">「那些花在『沒意義的事』上的好幾個小時，現在都不見了。我想要整個團隊每天都在用這些工具。」<br><em>啟示：小老闆最寶貴的不是錢，是時間。</em></p>
+          <p class="story__body"><span lang="en">「Hours of looking at stuff that doesn't matter are gone. I want an entire organization where everybody is using these tools daily.」</span><br>「那些花在『沒意義的事』上的好幾個小時，現在都不見了。我想要整個團隊每天都在用這些工具。」<br><em>啟示：小老闆最寶貴的不是錢，是時間。</em></p>
         </div>
         <div class="story">
           <p class="story__tag">⚡ 能源 · MidCentral Energy</p>
           <p class="story__name">Ryan Olson · Technology and Innovation Manager</p>
-          <p class="story__body">「它把過去那些超繁瑣的文書工作釋放出來，讓我們去做更有價值的事。」<br><em>啟示：任何「文書密集」的行業，都能被釋放。</em></p>
+          <p class="story__body"><span lang="en">「It's freeing up things that used to be a lot of very tedious clerical work for more value-add tasks.」</span><br>「它把過去那些超繁瑣的文書工作釋放出來，讓我們去做更有價值的事。」<br><em>啟示：任何「文書密集」的行業，都能被釋放。</em></p>
         </div>
       </div>
 
@@ -440,9 +475,9 @@
       </div>
 
       <div class="tools">
-        <div class="tool"><p class="tool__name">不拿你的資料訓練模型</p><span class="tool__when">承諾</span><p class="tool__desc">商用產品預設不會用你的輸入、檔案、客戶名單去訓練 Claude。官方一句話：「We don't train on your data.」</p></div>
+        <div class="tool"><p class="tool__name">預設不拿你的資料訓練模型</p><span class="tool__when">承諾</span><p class="tool__desc">官方說法是 <span lang="en">「We don't train on your data by default」</span>。Team / Enterprise 方案<strong>預設就不會</strong>用你的輸入訓練模型；個人 Pro / Max 方案則建議自己到設定確認、關閉資料訓練選項。</p></div>
         <div class="tool"><p class="tool__name">企業級加密</p><span class="tool__when">技術</span><p class="tool__desc">資料在傳輸中與儲存時全程加密。</p></div>
-        <div class="tool"><p class="tool__name">可查驗的合規認證</p><span class="tool__when">證明</span><p class="tool__desc">SOC 2 Type I＆II、ISO 27001、ISO 42001（AI 管理）、HIPAA、GDPR 等，公開可查。</p></div>
+        <div class="tool"><p class="tool__name">可查驗的合規</p><span class="tool__when">證明</span><p class="tool__desc">通過 SOC 2 Type I＆II、ISO 27001:2022、ISO 42001:2023（AI 管理）認證；並提供 HIPAA-ready（可簽 BAA）與 GDPR 遵循，皆公開可查。</p></div>
       </div>
 
       <aside class="warn">
@@ -458,7 +493,7 @@
       <aside class="tw-note">
         <p class="tw-note__label">🇹🇼 台灣對照</p>
         <div class="tw-note__body">
-          <p>怕資料外洩的台灣老闆，最有說服力的做法是花 5 分鐘打開 <a href="https://trust.anthropic.com" target="_blank" rel="noopener">trust.anthropic.com</a>，看它列出的認證清單，再對照你現在用的軟體 —— 通常會發現 Anthropic 的標準更嚴。另外，台灣若涉及個資，記得你自己這端也受《個人資料保護法》規範，內部規則要一併建立。</p>
+          <p>怕資料外洩的台灣老闆，最有說服力的做法是花 5 分鐘打開 <a href="https://trust.anthropic.com" target="_blank" rel="noopener">trust.anthropic.com</a>，看它列出的認證清單，再對照你現在用的軟體 —— 通常會發現 Anthropic 的標準更嚴。另外，台灣若涉及蒐集、處理客戶個資，你自己這端也受《個人資料保護法》（個資法）規範 —— 蒐集前要有告知與特定目的、不得逾目的使用，內部也建議先寫下「哪些資料能給 AI 看」的規則。</p>
         </div>
       </aside>
     </section>
@@ -475,12 +510,12 @@
         <div class="tool">
           <p class="tool__name">AI Fluency 線上課程</p>
           <span class="tool__when">完全免費 · 隨選</span>
-          <p class="tool__desc">專為小企業設計，9 堂課、約 54 分鐘影片，免帳號就能看、完課發證書。教你不只「用 AI」，還能「判斷 AI」。台灣老闆一樣能線上修。<br><a href="https://anthropic.skilljar.com/ai-fluency-for-small-businesses" target="_blank" rel="noopener">anthropic.skilljar.com</a></p>
+          <p class="tool__desc">專為小企業設計，9 堂課、約 54 分鐘影片，只需 email 免費註冊（不需付費 Claude 方案）、完課發證書。教你不只「用 AI」，還能「判斷 AI」。台灣老闆一樣能線上修。<br><a href="https://anthropic.skilljar.com/ai-fluency-for-small-businesses" target="_blank" rel="noopener">anthropic.skilljar.com</a></p>
         </div>
         <div class="tool">
           <p class="tool__name">Claude SMB Tour</p>
           <span class="tool__when">美國 10+ 城市 · 免費半日</span>
-          <p class="tool__desc">2026 春到秋，在美國多個城市辦免費半日工作坊，參加者送 1 個月 Claude Max。可惜目前以美國為主。</p>
+          <p class="tool__desc">2026 春到秋，在美國多個城市辦免費半日工作坊，參加者送 1 個月 Claude Max（活動條件以官方為準）。可惜目前以美國為主。</p>
         </div>
       </div>
 
@@ -491,7 +526,7 @@
       <aside class="tw-note">
         <p class="tw-note__label">🇹🇼 台灣老闆怎麼辦</p>
         <div class="tw-note__body">
-          <p>巡迴講座目前是美國場，台灣去不了沒關係 —— 走<strong>免費線上路線</strong>就好：今晚花 30 分鐘看 AI Fluency 第一堂課（一樣免費、免帳號），決定要不要再往下。想找伴的話，台灣也有不少 Claude／AI 工具的社群和讀書會，找一群人一起踩坑，比自己 Google 快很多。</p>
+          <p>巡迴講座目前是美國場，台灣去不了沒關係 —— 走<strong>免費線上路線</strong>就好：今晚花 30 分鐘看 AI Fluency 第一堂課（免費，只需 email 註冊），決定要不要再往下。想找伴的話，台灣也有不少 Claude／AI 工具的社群和讀書會，找一群人一起踩坑，比自己 Google 快很多。</p>
         </div>
       </aside>
     </section>
@@ -595,7 +630,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">🍳 阿明 · 早餐店</span><span class="prompt-card__scene">情境：月底要交資料給會計師，過去自己對帳要 3 小時</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>我月底要交資料給會計師，請幫我：
 1. 從我的記帳系統拉這個月所有收入和支出
 2. 對收款平台的結算紀錄，找出對不起來的差異
@@ -619,7 +655,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">💎 小芳 · 手作飾品電商</span><span class="prompt-card__scene">情境：過去兩年 7 月營收最低，想救</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>我做手作飾品電商，過去兩年的 7 月營收最低。請：
 1. 從客戶/訂單資料，找過去 12 個月哪些品項 7 月賣最好
 2. 擬 3 個促銷主題（含目標客群＋優惠方案）
@@ -643,7 +680,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">🎬 阿凱 · YouTuber／自媒體</span><span class="prompt-card__scene">情境：收到品牌業配合約，不知道有沒有坑</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>這份業配合約檔案在我的雲端硬碟，請：
 1. 列出所有付款條件（金額、時間、發票要求）
 2. 標出對我不利的條款（獨家期、二創限制、智財權歸屬）
@@ -667,7 +705,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">👩‍🏫 老師娘 · 線上開課</span><span class="prompt-card__scene">情境：800 個學員，想知道誰快流失、誰沒回</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>每天早上 9 點，請給我學員 morning brief：
 1. 過去 24 小時新進的學員＋來源
 2. 進度卡住超過 7 天的學員（誰、卡在哪一課）
@@ -692,7 +731,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">🧋 阿珍 · 手搖飲／咖啡（多分店）</span><span class="prompt-card__scene">情境：3 家店的營收、成本各自為政，看不到全貌</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>我有 3 家手搖飲店，請每週一給我一份營運摘要：
 1. 彙整 3 家店上週營收、客數、客單價，並排名
 2. 比較各店的原物料成本佔比，標出偏高的店
@@ -716,7 +756,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">💅 Vivi · 個人工作室（美甲／美容）</span><span class="prompt-card__scene">情境：客人預約、回診全靠手記，常漏掉該回訪的客人</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>我經營一間美甲工作室，請幫我：
 1. 整理這個月的預約清單，標出尚未確認的時段
 2. 找出超過 6 週沒回訪的老客戶，草擬一則回訪邀約訊息
@@ -740,7 +781,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">🎨 阿哲 · 接案設計師／SOHO</span><span class="prompt-card__scene">情境：報價、合約、追尾款全卡在自己身上</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>我是接案設計師，請幫我：
 1. 檢視這份客戶合約，標出付款條件與對我不利的條款
 2. 比對我過去的報價，這個專案報價是否合理
@@ -764,7 +806,8 @@
       <div class="prompt-card">
         <div class="prompt-card__head"><span class="prompt-card__persona">📚 主任 · 補習班／才藝班</span><span class="prompt-card__scene">情境：繳費、出席、家長訊息一團亂，招生季又快到</span></div>
         <div class="prompt-card__box">
-          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <button class="prompt-card__copy" type="button">複製</button>
+          <span class="prompt-card__status visually-hidden" role="status" aria-live="polite"></span>
           <pre class="prompt-card__pre"><code>我經營一間才藝補習班，請幫我：
 1. 整理本月學費繳費狀況，列出尚未繳費的學生與金額
 2. 找出近兩週缺席超過 2 次的學生，提醒我關心
@@ -862,12 +905,12 @@
         </a>
         <a class="resource" href="https://trust.anthropic.com" target="_blank" rel="noopener">
           <span class="resource__num">05</span>
-          <span><span class="resource__title">Anthropic 信任中心</span><span class="resource__desc">資料安全與合規認證（SOC 2、ISO、HIPAA、GDPR）</span></span>
+          <span><span class="resource__title">Anthropic 信任中心</span><span class="resource__desc">資料安全與合規（SOC 2、ISO 27001/42001、HIPAA-ready、GDPR）</span></span>
           <span class="resource__arrow">↗</span>
         </a>
         <a class="resource" href="https://anthropic.skilljar.com/ai-fluency-for-small-businesses" target="_blank" rel="noopener">
           <span class="resource__num">06</span>
-          <span><span class="resource__title">AI Fluency for Small Business（免費課程）</span><span class="resource__desc">9 堂課、約 54 分鐘、免帳號、完課發證書</span></span>
+          <span><span class="resource__title">AI Fluency for Small Business（免費課程）</span><span class="resource__desc">9 堂課、約 54 分鐘、email 免費註冊、完課發證書</span></span>
           <span class="resource__arrow">↗</span>
         </a>
       </div>

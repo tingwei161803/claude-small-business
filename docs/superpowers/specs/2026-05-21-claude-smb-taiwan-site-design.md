@@ -1,7 +1,7 @@
 # 設計規格：Claude for Small Business · 台灣老闆導讀互動網頁
 
 - **日期**：2026-05-21
-- **作者**：Peter Chang（monkeydluffy3u4@gmail.com）
+- **作者**：tingwei161803（monkeydluffy3u4ace@gmail.com）
 - **狀態**：設計核准，待 spec review
 
 ---

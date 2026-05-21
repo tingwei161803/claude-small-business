@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude for Small Business · 台灣老闆白話導讀</title>
+<meta name="description" content="把 Anthropic 的 Claude for Small Business 用白話比喻講給沒有 IT 部門的台灣小老闆聽 — 15 道現成工作流、接你既有工具、不會算錯的會計、自帶設計師的行銷助理，含手把手安裝與 8 個情境 prompt。中英雙語。">
+<meta property="og:title" content="Claude for Small Business · 台灣老闆白話導讀">
+<meta property="og:description" content="一個人也撐得起整間店的 24 小時 AI 兼職 — 白話比喻、台灣對照、手把手安裝。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_TW">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='10' height='10' x='3' y='3' fill='%23CC785C' transform='rotate(45 8 8)'/%3E%3Crect width='4' height='4' x='6' y='6' fill='%23F0EEE6' transform='rotate(45 8 8)'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#cover" aria-label="Claude for Small Business 台灣導讀 首頁">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span>Claude for Small Business</span>
+      <span class="brand__sep">·</span>
+      <span class="brand__sub">台灣老闆白話導讀</span>
+    </a>
+    <div class="site-header__actions">
+      <a class="ghstar" href="https://github.com/tingwei161803/claude-small-business" target="_blank" rel="noopener" aria-label="在 GitHub 上幫這個專案加星">
+        <svg class="ghstar__logo" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span class="ghstar__text">在 GitHub 加星</span>
+        <span class="ghstar__star" aria-hidden="true">★</span>
+        <span class="ghstar__count" hidden></span>
+      </a>
+      <nav class="lang-switch" aria-label="語言 Language">
+        <a href="./" aria-current="true">中</a>
+        <a href="./en/" data-lang-link>EN</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- ============ TOC ============ -->
+  <aside class="toc" aria-label="目錄">
+    <button class="toc__toggle" type="button">目錄</button>
+    <div class="toc__panel">
+      <p class="toc__label">目錄</p>
+      <ol class="toc__list">
+        <li class="toc__item" data-target="cover"><a href="#cover"><span class="toc__num">00</span>這份導讀</a></li>
+        <li class="toc__item" data-target="p00"><a href="#p00"><span class="toc__num">01</span>先搞懂這是什麼</a></li>
+        <li class="toc__item" data-target="p01"><a href="#p01"><span class="toc__num">02</span>為什麼小企業需要</a></li>
+        <li class="toc__item" data-target="p02"><a href="#p02"><span class="toc__num">03</span>15 道現成食譜</a></li>
+        <li class="toc__item" data-target="p03"><a href="#p03"><span class="toc__num">04</span>萬能轉接頭</a></li>
+        <li class="toc__item" data-target="p04"><a href="#p04"><span class="toc__num">05</span>不會算錯的會計</a></li>
+        <li class="toc__item" data-target="p05"><a href="#p05"><span class="toc__num">06</span>自帶設計師的行銷</a></li>
+        <li class="toc__item" data-target="p06"><a href="#p06"><span class="toc__num">07</span>三位老闆的故事</a></li>
+        <li class="toc__item" data-target="p07"><a href="#p07"><span class="toc__num">08</span>銀行金庫級保護</a></li>
+        <li class="toc__item" data-target="p08"><a href="#p08"><span class="toc__num">09</span>免費補習班</a></li>
+        <li class="toc__item" data-target="p09"><a href="#p09"><span class="toc__num">10</span>手把手裝起來</a></li>
+        <li class="toc__item" data-target="roadmap"><a href="#roadmap"><span class="toc__num">11</span>下一步路徑圖</a></li>
+        <li class="toc__item" data-target="sources"><a href="#sources"><span class="toc__num">12</span>資料來源</a></li>
+      </ol>
+
+      <div class="toc__cta">
+        <p class="toc__cta-label">官方原文</p>
+        <p class="toc__cta-title">看 Anthropic 發布文</p>
+        <a class="toc__cta-link" href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener">2026-05-13 發布</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <!-- ====== Cover / Hero ====== -->
+    <section class="section hero" id="cover">
+      <p class="hero__eyebrow">白話導讀 · 台灣中小企業老闆版 · 2026</p>
+      <h1 class="hero__title">Claude for <em>Small Business</em></h1>
+      <p class="hero__lede">給早餐店、電商、自媒體、工作室的你 —— 一個人也撐得起整間店的 24 小時 AI 兼職。</p>
+
+      <div class="hero__meta">
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">發布</span>
+          <span class="hero__meta-value">Anthropic · 2026-05-13</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">內容</span>
+          <span class="hero__meta-value">10 章 · 安裝 · 8 個食譜</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">適合</span>
+          <span class="hero__meta-value">沒有 IT 部門的小老闆</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">語言</span>
+          <span class="hero__meta-value">中 / EN 雙語</span>
+        </div>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#p00">開始讀 <span class="btn__arrow">→</span></a>
+        <a class="btn btn--secondary" href="https://claude.com/solutions/small-business" target="_blank" rel="noopener">看官方產品頁</a>
+      </div>
+
+      <p class="hero__more">
+        <strong>這是一份非官方的白話導讀。</strong>
+        <span>用生活比喻把官方那篇 enterprise 味很重的英文發布文，翻成台灣老闆聽得懂的話。</span>
+        <a href="#sources">資料來源</a>
+      </p>
+    </section>
+
+    <!-- ====== P00 先搞懂這是什麼 ====== -->
+    <section class="section" id="p00">
+      <header class="chapter__head">
+        <p class="chapter__num">第 01 章</p>
+        <h2 class="chapter__title">先搞懂這是什麼</h2>
+        <p class="chapter__sub">不是又一個你要學的軟體 —— 是一個住進你現有工具裡、會幫你做事的兼職。</p>
+      </header>
+
+      <div class="prose">
+        <p class="dropcap">先把名詞放一邊。Claude for Small Business 不是新的 app、也不是要你搬家換系統。它是 Anthropic 在 Claude Cowork 裡推出的一組「現成工作流」，專門做小店每天都要做、但最煩、最容易出錯的那些行政雜事 —— 對帳、追款、整理客戶、做行銷素材。</p>
+        <p>過去這些事，你只能自己一件一件摸索；現在你像多請了一個兼職同事，差別是這個同事不用睡覺、不會算錯帳，而且你永遠按最後那顆送出鍵。</p>
+      </div>
+
+      <div class="stage">
+        <div class="stage__block">
+          <p class="stage__block-label">過去 · 自己一個人撐</p>
+          <h3>每件事都靠你硬扛</h3>
+          <ul>
+            <li>月底熬夜對帳，三個平台的數字兜不起來</li>
+            <li>逾期款一封一封手寫催款信，還怕傷感情</li>
+            <li>行銷活動自己想文案、自己做圖、自己分客戶</li>
+            <li>每個流程都從零摸索，沒有 SOP</li>
+          </ul>
+        </div>
+        <div class="stage__block">
+          <p class="stage__block-label">現在 · 用 Claude for Small Business</p>
+          <h3>你還是老闆，但多了個會做事的人</h3>
+          <ul>
+            <li>自動拉帳、跨平台比對、標出對不起來的項目</li>
+            <li>把逾期款由大到小排序，催款信先幫你草擬</li>
+            <li>讀你的客戶資料 → 出策略 → 直接生行銷素材</li>
+            <li>15 個現成工作流，照著跑，不用自己研究</li>
+          </ul>
+        </div>
+      </div>
+
+      <blockquote class="pullquote">
+        你不是要學一個新工具，你是要請一個已經會用你工具的人。
+      </blockquote>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣對照</p>
+        <div class="tw-note__body">
+          <p>官方示範用的是 QuickBooks、PayPal 這些美國工具。台灣老闆先別被名字嚇到 —— 本導讀每一章都會把它對應到你常用的在地服務（鼎新、綠界、街口、LINE…）。看不懂英文工具名，往下看 🇹🇼 卡片就對了。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P01 為什麼小企業需要 ====== -->
+    <section class="section" id="p01">
+      <header class="chapter__head">
+        <p class="chapter__num">第 02 章</p>
+        <h2 class="chapter__title">終於有支付得起的 AI 顧問</h2>
+        <p class="chapter__sub">大公司有 AI 顧問團和數據科學家，你只有自己 —— 直到現在。</p>
+      </header>
+
+      <div class="prose">
+        <p>過去 AI 像是大企業的軍備：要養資料團隊、要客製系統、要燒錢。小店連門票都買不起。Anthropic 這次的角度很直接 —— 第一個專門設計給「沒有 IT 部門的老闆」的工具。</p>
+      </div>
+
+      <blockquote class="pullquote">
+        Small businesses make up nearly half the American economy, but they've never had the resources of bigger companies. AI is the first technology that can finally close that gap.
+        <span class="pullquote__attr">Daniela Amodei · Anthropic 共同創辦人暨總裁</span>
+      </blockquote>
+
+      <div class="prose">
+        <p>但別只聽美好的一面。Anthropic 自己做了一份對小企業主的調查，結果有一半的人說，他們對 AI <strong>最大的疑慮就是資料安全</strong>。這個擔心是合理的，不該被忽略 —— 我們會在<a href="#p07">第 08 章</a>專門講 Anthropic 怎麼處理，以及你自己也要做哪些事。</p>
+      </div>
+
+      <div class="challenges">
+        <div class="challenge">
+          <p class="challenge__num">先算一筆帳</p>
+          <h3 class="challenge__title">你每天花多少時間在「行政」？</h3>
+          <p class="challenge__body">拿張紙，寫下你每天花最多時間的 5 件事，圈出「行政類」（對帳、發票、回信、排程），加總時數。多半落在每天 1–3 小時 —— 一個月加起來，就是一整份兼職的工時。那就是這套工具想幫你贏回來的時間。</p>
+        </div>
+      </div>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣對照</p>
+        <div class="tw-note__body">
+          <p>「50% 把資料安全列為最大疑慮」這個數字，是 <strong>Anthropic 自家對小企業主做的調查</strong>，不是第三方研究 —— 引用時別說成「業界統計」。對台灣老闆來說，這份不安一樣真實：客戶名單、財報、訂單，都是你的命脈。先把疑慮放心上，再往下看它怎麼被處理。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P02 15 道現成食譜 ====== -->
+    <section class="section" id="p02">
+      <header class="chapter__head">
+        <p class="chapter__num">第 03 章</p>
+        <h2 class="chapter__title">15 道現成食譜</h2>
+        <p class="chapter__sub">會煮菜的人少，會照食譜做的人多 —— 你不用學 prompt engineering。</p>
+      </header>
+
+      <div class="prose">
+        <p>很多人卡在 AI 第一關，是「我不知道要叫它做什麼、怎麼問」。這就是 Claude for Small Business 跟一般聊天 AI 最大的差別。</p>
+        <p>打個比方：一般的聊天 AI 像給你一間廚房，你得自己想煮什麼、自己配方；Claude for Small Business 直接給你 <strong>15 道寫好的食譜</strong>，照著按就會跑。它另外還附了 15 個底層「技能（skills）」當配料 —— 但你不用管那層，挑一道菜開動就好。</p>
+      </div>
+
+      <p class="section-h">食譜長什麼樣子</p>
+      <div class="prose"><p>每道食譜就是一個 slash 指令，打進去它就一步步幫你跑完整個流程：</p></div>
+      <div class="recipes">
+        <div class="recipe"><code class="recipe__cmd">/plan-payroll</code><p class="recipe__desc">薪資與現金規劃：預測未來現金、抓出逾期款。（注意：是預測現金、追款，不是真的幫你發薪水）</p></div>
+        <div class="recipe"><code class="recipe__cmd">/close-month</code><p class="recipe__desc">月結對帳：跨平台對帳、找出不符項目、寫出損益（P&amp;L）摘要。</p></div>
+        <div class="recipe"><code class="recipe__cmd">/monday-brief</code><p class="recipe__desc">每週開工摘要：現金、銷售、業務 pipeline 一眼看完。</p></div>
+        <div class="recipe"><code class="recipe__cmd">/run-campaign</code><p class="recipe__desc">成長活動：從分析、擬策略到在 Canva 生出素材，一條龍。</p></div>
+        <div class="recipe"><code class="recipe__cmd">/smb-onboard</code><p class="recipe__desc">新手起步：第一次用就跑這個，它帶你接工具、選第一個流程。</p></div>
+      </div>
+
+      <p class="section-h">15 個工作流，大致分三類</p>
+      <div class="tools">
+        <div class="tool">
+          <p class="tool__name">財務</p>
+          <span class="tool__when">最重複、最怕錯</span>
+          <p class="tool__desc">薪資/現金規劃、月結對帳、追逾期款、毛利分析、月底準備、報稅整理、現金摘要。</p>
+        </div>
+        <div class="tool">
+          <p class="tool__name">銷售與行銷</p>
+          <span class="tool__when">最花時間做素材</span>
+          <p class="tool__desc">跑成長活動、潛在客戶分級（lead triage）、內容策略 —— 讀資料、出策略、生圖一起來。</p>
+        </div>
+        <div class="tool">
+          <p class="tool__name">營運與其他</p>
+          <span class="tool__when">陸續上架</span>
+          <p class="tool__desc">合約審查、客戶情緒分析、招募協助等，工作流會持續增加。</p>
+        </div>
+      </div>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣對照</p>
+        <div class="tw-note__body">
+          <p>別貪心。第一次用，挑「最像你日常」的<strong>一道</strong>食譜跑通，比五道都試一次有用。對台灣老闆，最容易有感的通常是 <code class="recipe__cmd">/close-month</code>（月結對帳）跟 <code class="recipe__cmd">/monday-brief</code>（每週摘要）—— 因為這兩件事你每個月、每週一定會做。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P03 萬能轉接頭 ====== -->
+    <section class="section" id="p03">
+      <header class="chapter__head">
+        <p class="chapter__num">第 04 章</p>
+        <h2 class="chapter__title">萬能轉接頭</h2>
+        <p class="chapter__sub">最大的痛不是 AI 不夠強，是怕它逼你換工具。好消息：你一個都不用換。</p>
+      </header>
+
+      <div class="prose">
+        <p>Claude for Small Business 不是要你搬家。它直接「住進」你已經在用的工具裡 —— 你開的還是同一套會計軟體、同一個客戶系統，只是多了一個會主動讀、主動寫的小幫手在旁邊。</p>
+      </div>
+
+      <p class="section-h">它能接的工具（清單會持續增加）</p>
+      <div class="tools">
+        <div class="tool"><p class="tool__name">QuickBooks</p><span class="tool__when">記帳</span><p class="tool__desc">拉收支、對帳、產損益。</p></div>
+        <div class="tool"><p class="tool__name">PayPal · Stripe · Square</p><span class="tool__when">收款</span><p class="tool__desc">結算金流、比對紀錄。</p></div>
+        <div class="tool"><p class="tool__name">HubSpot</p><span class="tool__when">客戶管理</span><p class="tool__desc">分群、追蹤、看 pipeline。</p></div>
+        <div class="tool"><p class="tool__name">Canva</p><span class="tool__when">設計</span><p class="tool__desc">直接生出貼文、EDM 素材。</p></div>
+        <div class="tool"><p class="tool__name">Docusign</p><span class="tool__when">電子簽約</span><p class="tool__desc">讀合約、整理條款。</p></div>
+        <div class="tool"><p class="tool__name">Slack</p><span class="tool__when">團隊溝通</span><p class="tool__desc">推播摘要、提醒。</p></div>
+        <div class="tool"><p class="tool__name">Google Workspace</p><span class="tool__when">信箱／日曆／雲端</span><p class="tool__desc">讀檔案、排程、寄信。</p></div>
+        <div class="tool"><p class="tool__name">Microsoft 365</p><span class="tool__when">Office 套件</span><p class="tool__desc">文件、試算表、信件。</p></div>
+      </div>
+      <div class="prose"><p>官方不同頁面列的工具略有出入，重點不是「剛好幾個」，而是你只要接<strong>一個</strong>常用的就能開始 —— 用越多越值錢，但別等到全部裝齊才動手。</p></div>
+
+      <p class="section-h">為什麼這比一般聊天 AI 強</p>
+      <table class="decision">
+        <thead>
+          <tr><th scope="col">面向</th><th scope="col">一般聊天 AI</th><th scope="col">Claude for Small Business</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">怎麼拿到你的資料</th>
+            <td data-label="一般聊天 AI">你要自己複製貼上，它才看得到</td>
+            <td data-label="Claude for Small Business">經你授權後，直接連進工具讀寫</td>
+          </tr>
+          <tr>
+            <th scope="row">比喻</th>
+            <td data-label="一般聊天 AI">路邊問路的人 —— 等你問</td>
+            <td data-label="Claude for Small Business">坐你辦公室的助理 —— 主動做</td>
+          </tr>
+          <tr>
+            <th scope="row">適合誰</th>
+            <td data-label="一般聊天 AI">有時間慢慢餵資料的人</td>
+            <td data-label="Claude for Small Business">沒空、只想看結果的小老闆</td>
+          </tr>
+        </tbody>
+        <caption>差別在「等你問」還是「主動做」——對沒時間的老闆，差很多。</caption>
+      </table>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣對照 · 工具替換表</p>
+        <div class="tw-note__body">
+          <ul>
+            <li><strong>QuickBooks</strong> → 鼎新、Excel（很多台灣小店其實還是 Excel 起家）</li>
+            <li><strong>PayPal / Stripe / Square</strong> → 綠界、藍新、街口、Line Pay</li>
+            <li><strong>HubSpot</strong> → 行動百分百、Salesforce</li>
+            <li><strong>Docusign</strong> → iSign、Adobe Sign</li>
+            <li><strong>Slack</strong> → LINE、Teams</li>
+            <li><strong>Canva · Google Workspace · Microsoft 365</strong> → 台灣同樣常用，可直接接</li>
+          </ul>
+          <p>⚠️ 老實說：台灣在地服務（綠界、街口、鼎新…）目前不一定有官方原生整合。實務上你可以先用「能接的」（Canva、Google、Microsoft、QuickBooks），其他用匯出檔（Excel/CSV）丟給它讀，一樣能跑對帳、分析。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P04 不會算錯的會計 ====== -->
+    <section class="section" id="p04">
+      <header class="chapter__head">
+        <p class="chapter__num">第 05 章</p>
+        <h2 class="chapter__title">不會算錯帳的兼職會計</h2>
+        <p class="chapter__sub">對帳、找差異、產損益 —— 全是 AI 最擅長的「機械、可重複、人最容易出錯」的事。</p>
+      </header>
+
+      <div class="prose">
+        <p>假設你是<strong>阿明</strong>，開一間早餐店。過去每到月底，你得把 LINE Pay、現金、外送平台三邊的帳兜在一起，比食材成本和營收找毛利，整理發票給會計師，還要追幾個欠賒帳的老熟客 —— 又不能傷感情。光對帳就三小時起跳。</p>
+        <p>換成 Claude for Small Business 之後：它自動把帳拉出來跨平台比對、標出毛利異常的品項、草擬一份損益摘要給會計師、把逾期帳由大到小排序並寫好提醒訊息。你做的只剩一件事 —— 看過、按確認。</p>
+      </div>
+
+      <p class="timesave"><span class="timesave__from">月底 3 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">20 分鐘</span><span class="timesave__note">阿明多睡 2.5 小時，或多賣 50 份早餐</span></p>
+
+      <p class="section-h">四個財務工作流，細看</p>
+      <ol class="flow">
+        <li class="flow__step"><span class="flow__num">1</span><div class="flow__text"><strong>薪資/現金規劃</strong><span>預測 30 天現金、標出逾期款</span></div></li>
+        <li class="flow__step"><span class="flow__num">2</span><div class="flow__text"><strong>月結對帳</strong><span>跨平台對帳、標不符、產損益</span></div></li>
+        <li class="flow__step"><span class="flow__num">3</span><div class="flow__text"><strong>每週摘要</strong><span>現金、銷售、pipeline 一眼看</span></div></li>
+        <li class="flow__step"><span class="flow__num">4</span><div class="flow__text"><strong>追逾期款</strong><span>排序逾期、草擬催款信</span></div></li>
+      </ol>
+
+      <aside class="warn">
+        <p class="warn__title">⚠️ 「自動草擬」不等於「自動寄出」</p>
+        <p>這點最重要：Claude 把催款信、損益摘要寫好<strong>放在桌上</strong>，但要不要寄、什麼口氣寄，是你按送出鍵。它不會替你做最後決定 —— 跟客戶溝通的分寸，只有你定得了。你永遠在最後一關。</p>
+      </aside>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣對照</p>
+        <div class="tw-note__body">
+          <p>台灣老闆的金流多半散在 LINE Pay、街口、現金、外送平台後台。就算這些沒有原生整合，你也可以把各平台的對帳單匯出成 Excel/CSV，丟進去讓它幫你比對、抓差異 —— 月結的苦工一樣能省。月底前先讓它跑一次，看它找出多少你沒發現的差異，通常比你想的多。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P05 自帶設計師的行銷 ====== -->
+    <section class="section" id="p05">
+      <header class="chapter__head">
+        <p class="chapter__num">第 06 章</p>
+        <h2 class="chapter__title">自帶設計師的行銷助理</h2>
+        <p class="chapter__sub">讀資料、擬策略、做圖、分客戶 —— 一個 campaign 從三小時變半小時。</p>
+      </header>
+
+      <div class="prose">
+        <p>換個主角。<strong>小芳</strong>做手作飾品電商，一個人校長兼撞鐘。她每週的痛是：IG 一堆潛在客戶懶得追、想做促銷又要寫文案做圖分客群，一個 campaign 搞三小時，做完累到不想推下一個。</p>
+        <p>Claude for Small Business 怎麼接手：先分析過去半年哪些品項在弱月份賣不動，擬一個促銷主題加目標客群（你確認），在 Canva 直接生出 IG 貼文和 EDM 圖（你選一張），最後在客戶系統分群、設好觸發提醒（你按發送）。全程你只負責「按確認」。</p>
+      </div>
+
+      <p class="section-h">跑一個成長活動的完整流程</p>
+      <ol class="flow">
+        <li class="flow__step"><span class="flow__num">1</span><div class="flow__text"><strong>分析</strong><span>讀客戶資料，找出哪幾個月最弱</span></div></li>
+        <li class="flow__step"><span class="flow__num">2</span><div class="flow__text"><strong>策略</strong><span>擬主題、客群、優惠方案</span></div></li>
+        <li class="flow__step"><span class="flow__num">3</span><div class="flow__text"><strong>設計</strong><span>在 Canva 生出廣告素材</span></div></li>
+        <li class="flow__step"><span class="flow__num">4</span><div class="flow__text"><strong>發送</strong><span>分群、設定觸發、你按發送</span></div></li>
+      </ol>
+
+      <p class="timesave"><span class="timesave__from">一個 campaign 3 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">30 分鐘</span><span class="timesave__note">小芳每週多做 2 個活動，或早點下班</span></p>
+
+      <div class="prose">
+        <p>還有一招叫<strong>潛在客戶分級</strong>（lead triage）：100 個 lead 進來，它幫你標出最熱的 20 個，你把力氣花在最可能成交的人身上，其餘 80% 的篩選時間省下來。</p>
+      </div>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣對照</p>
+        <div class="tw-note__body">
+          <p>台灣電商的客戶資料常在蝦皮後台、IG/FB 私訊、官網訂單裡。你可以把訂單與客戶清單匯出，讓它分析「弱月份、品項組合、回購客群」。多半它會看到你沒意識到的機會 —— 例如某個時段、某種組合特別好賣。AI 出的策略當參考，最後拍板的還是最懂客人的你。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P06 三位老闆的故事 ====== -->
+    <section class="section" id="p06">
+      <header class="chapter__head">
+        <p class="chapter__num">第 07 章</p>
+        <h2 class="chapter__title">三位老闆的真實故事</h2>
+        <p class="chapter__sub">不是科技業的玩具 —— 咖啡、水壺、能源公司都在用。以下引言出自 Anthropic 官方案例。</p>
+      </header>
+
+      <div class="stories">
+        <div class="story">
+          <p class="story__tag">☕ 咖啡 · Purity Coffee</p>
+          <p class="story__name">Brian Ludviksen · COO</p>
+          <p class="story__body">「它不只幫我解決問題，還讓我看到那些我自己根本沒發現的問題。」<br><em>啟示：一個會主動指出你盲點的同事，對小老闆超有價值。</em></p>
+        </div>
+        <div class="story">
+          <p class="story__tag">🥤 水壺 · Simple Modern</p>
+          <p class="story__name">Mike Beckham · CEO</p>
+          <p class="story__body">「那些花在『沒意義的事』上的好幾個小時，現在都不見了。我想要整個團隊每天都在用這些工具。」<br><em>啟示：小老闆最寶貴的不是錢，是時間。</em></p>
+        </div>
+        <div class="story">
+          <p class="story__tag">⚡ 能源 · MidCentral Energy</p>
+          <p class="story__name">Ryan Olson · Technology and Innovation Manager</p>
+          <p class="story__body">「它把過去那些超繁瑣的文書工作釋放出來，讓我們去做更有價值的事。」<br><em>啟示：任何「文書密集」的行業，都能被釋放。</em></p>
+        </div>
+      </div>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 找到自己 —— 你是哪一種？</p>
+        <div class="tw-note__body">
+          <ul>
+            <li><strong>🍳 餐飲／早餐店</strong>：月結對帳 + 食材成本分析</li>
+            <li><strong>💎 電商／手作賣家</strong>：成長活動 + 客戶分級 + Canva 出圖</li>
+            <li><strong>🎬 自媒體／YouTuber</strong>：合約審查 + 內容排程 + 業配對帳</li>
+            <li><strong>👩‍🏫 線上開課／顧問</strong>：每日摘要 + 追學員進度 + 追款</li>
+            <li><strong>🧋 手搖飲／咖啡（多分店）</strong>：各店營收彙整 + 毛利比較</li>
+            <li><strong>💅 個人工作室</strong>：預約管理 + 回診提醒 + 客戶分群</li>
+          </ul>
+          <p>⚠️ 省時數字因人而異。網路上流傳「每週省 18–25 小時」這類說法查無可靠出處，請別當官方保證。比較可信的是：把你每天的行政時數（多半 1–3 小時）拿來估算，那才是你真正能贏回的時間。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P07 銀行金庫級保護 ====== -->
+    <section class="section" id="p07">
+      <header class="chapter__head">
+        <p class="chapter__num">第 08 章</p>
+        <h2 class="chapter__title">銀行金庫等級的保護</h2>
+        <p class="chapter__sub">「我的客戶資料、財務資料，會不會被拿去訓練 AI？」這個擔心是對的，先講清楚。</p>
+      </header>
+
+      <div class="prose">
+        <p>還記得<a href="#p01">第 02 章</a>那個數字嗎 —— 一半的小企業主，把資料安全列為對 AI 最大的疑慮。這不是杞人憂天，是該被認真對待的問題。Anthropic 的回應有三個重點：</p>
+      </div>
+
+      <div class="tools">
+        <div class="tool"><p class="tool__name">不拿你的資料訓練模型</p><span class="tool__when">承諾</span><p class="tool__desc">商用產品預設不會用你的輸入、檔案、客戶名單去訓練 Claude。官方一句話：「We don't train on your data.」</p></div>
+        <div class="tool"><p class="tool__name">企業級加密</p><span class="tool__when">技術</span><p class="tool__desc">資料在傳輸中與儲存時全程加密。</p></div>
+        <div class="tool"><p class="tool__name">可查驗的合規認證</p><span class="tool__when">證明</span><p class="tool__desc">SOC 2 Type I＆II、ISO 27001、ISO 42001（AI 管理）、HIPAA、GDPR 等，公開可查。</p></div>
+      </div>
+
+      <aside class="warn">
+        <p class="warn__title">⚠️ 但安全是「兩邊一起做」—— 你自己也要做三件事</p>
+        <p>就算 AI 廠商夠安全，你的習慣一樣關鍵：</p>
+        <ol>
+          <li><strong>別在公開頻道貼客戶敏感資料</strong> —— 例如 LINE 公開群、公開的 Slack channel，不要貼身分證、信用卡號。</li>
+          <li><strong>帳號用獨立 email + 兩步驟驗證</strong> —— 別跟你的私人 Gmail 共用同一組。</li>
+          <li><strong>跟員工講清楚「什麼能給 AI 看」</strong> —— 「客戶清單可以、信用卡號不行」這種規則先寫下來。</li>
+        </ol>
+      </aside>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣對照</p>
+        <div class="tw-note__body">
+          <p>怕資料外洩的台灣老闆，最有說服力的做法是花 5 分鐘打開 <a href="https://trust.anthropic.com" target="_blank" rel="noopener">trust.anthropic.com</a>，看它列出的認證清單，再對照你現在用的軟體 —— 通常會發現 Anthropic 的標準更嚴。另外，台灣若涉及個資，記得你自己這端也受《個人資料保護法》規範，內部規則要一併建立。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P08 免費補習班 ====== -->
+    <section class="section" id="p08">
+      <header class="chapter__head">
+        <p class="chapter__num">第 09 章</p>
+        <h2 class="chapter__title">免費補習班 + 巡迴講座</h2>
+        <p class="chapter__sub">擔心 AI，多半不是「不安全」，是「不會用」。連學習成本，Anthropic 都幫你扛。</p>
+      </header>
+
+      <div class="tools">
+        <div class="tool">
+          <p class="tool__name">AI Fluency 線上課程</p>
+          <span class="tool__when">完全免費 · 隨選</span>
+          <p class="tool__desc">專為小企業設計，9 堂課、約 54 分鐘影片，免帳號就能看、完課發證書。教你不只「用 AI」，還能「判斷 AI」。台灣老闆一樣能線上修。<br><a href="https://anthropic.skilljar.com/ai-fluency-for-small-businesses" target="_blank" rel="noopener">anthropic.skilljar.com</a></p>
+        </div>
+        <div class="tool">
+          <p class="tool__name">Claude SMB Tour</p>
+          <span class="tool__when">美國 10+ 城市 · 免費半日</span>
+          <p class="tool__desc">2026 春到秋，在美國多個城市辦免費半日工作坊，參加者送 1 個月 Claude Max。可惜目前以美國為主。</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>把「教育」當產品的一部分，本來是大企業客戶才有的待遇 —— 等於買一台複雜的機器，廠商還派工程師到你家手把手教。重點是：你<strong>不用先買 Claude，也能先免費學</strong>。</p>
+      </div>
+
+      <aside class="tw-note">
+        <p class="tw-note__label">🇹🇼 台灣老闆怎麼辦</p>
+        <div class="tw-note__body">
+          <p>巡迴講座目前是美國場，台灣去不了沒關係 —— 走<strong>免費線上路線</strong>就好：今晚花 30 分鐘看 AI Fluency 第一堂課（一樣免費、免帳號），決定要不要再往下。想找伴的話，台灣也有不少 Claude／AI 工具的社群和讀書會，找一群人一起踩坑，比自己 Google 快很多。</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ====== P09 手把手裝起來 + Prompt 食譜書 ====== -->
+    <section class="section" id="p09">
+      <header class="chapter__head">
+        <p class="chapter__num">第 10 章</p>
+        <h2 class="chapter__title">手把手裝起來</h2>
+        <p class="chapter__sub">零基礎也能跟著做。重點先講：它是 Claude Cowork 裡的一個 plugin，本身免費，不是另外加購的方案。</p>
+      </header>
+
+      <div class="prose">
+        <p>很多老闆看完想試，卻卡在「我連怎麼開始都不知道」。其實沒有想像中難 —— Claude for Small Business 不是獨立 app、也不是要你升級到某個貴方案。只要你有任一個 Claude 付費方案（Pro / Max / Team 都內含 Cowork），就能在 Cowork 裡把它打開。以下四步驟。</p>
+      </div>
+
+      <div class="install-step">
+        <div class="install-step__head"><span class="install-step__num">步驟 1 / 4</span><h3 class="install-step__title">確認你有付費方案</h3><span class="install-step__time">⏱ 約 2 分鐘</span></div>
+        <div class="install-step__block install-step__block--do">
+          <p class="install-step__sub">👉 你要做什麼</p>
+          <ol>
+            <li>到 <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a> 看方案。</li>
+            <li>Claude Cowork 內含於 Pro（約 US$20/月）、Max（自 US$100/月起）、Team（約 US$25/席/月）。</li>
+            <li>選一個適合你的方案訂閱。一人小店多半 Pro 就夠。</li>
+          </ol>
+        </div>
+        <div class="install-step__block install-step__block--see">
+          <p class="install-step__sub">👀 你會看到什麼</p>
+          <p>登入後就有 Claude 的對話介面，跟一般聊天 AI 的網頁版類似，可以馬上打字測試。</p>
+        </div>
+        <div class="install-step__block install-step__block--stuck">
+          <p class="install-step__sub">⚠️ 卡住了？</p>
+          <p>刷卡失敗，先確認卡片有開「跨國消費」功能，或改用 Apple Pay。價格以官方頁面為準（USD），台幣會依當下匯率與稅金換算。<strong>沒有官方確認的「7 天免費試用」，別被誤導。</strong></p>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="install-step__head"><span class="install-step__num">步驟 2 / 4</span><h3 class="install-step__title">打開 Claude Cowork</h3><span class="install-step__time">⏱ 約 3 分鐘</span></div>
+        <div class="install-step__block install-step__block--do">
+          <p class="install-step__sub">👉 你要做什麼</p>
+          <ol>
+            <li>登入 Claude 後，找到 Cowork（協作）功能進入。</li>
+            <li>桌面版體驗較完整：可到 <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a> 下載對應 Mac／Windows 版安裝。</li>
+            <li>安裝流程跟裝 LINE、Zoom 一樣，跟著畫面按下一步即可。</li>
+          </ol>
+        </div>
+        <div class="install-step__block install-step__block--see">
+          <p class="install-step__sub">👀 你會看到什麼</p>
+          <p>一個能執行多步驟工作的協作環境，而不只是單純一問一答的聊天框。</p>
+        </div>
+        <div class="install-step__block install-step__block--stuck">
+          <p class="install-step__sub">⚠️ 卡住了？</p>
+          <p>Mac 第一次打開若跳「無法驗證開發者」，到「系統設定 → 隱私權與安全性」最下面按「仍要打開」。這是 Mac 對所有非 App Store 軟體的標準步驟，不是 Claude 的問題。</p>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="install-step__head"><span class="install-step__num">步驟 3 / 4</span><h3 class="install-step__title">安裝並開啟 Small Business plugin</h3><span class="install-step__time">⏱ 約 2 分鐘</span></div>
+        <div class="install-step__block install-step__block--do">
+          <p class="install-step__sub">👉 你要做什麼</p>
+          <ol>
+            <li>在 Cowork 裡找到 plugin（外掛）清單。</li>
+            <li>找到「Claude for Small Business」並安裝、把開關切到開啟。</li>
+            <li>參考官方說明頁：<a href="https://claude.com/plugins/small-business" target="_blank" rel="noopener">claude.com/plugins/small-business</a>。</li>
+          </ol>
+        </div>
+        <div class="install-step__block install-step__block--see">
+          <p class="install-step__sub">👀 你會看到什麼</p>
+          <p>開啟後，你會多出一組現成的工作流指令（像 <code class="recipe__cmd">/close-month</code>），代表這個強化功能已經就緒。</p>
+        </div>
+        <div class="install-step__block install-step__block--stuck">
+          <p class="install-step__sub">⚠️ 卡住了？</p>
+          <p>找不到這個 plugin，先確認你的方案有含 Cowork（免費版沒有），再重新整理或徹底關掉重開一次。介面文字可能隨版本更新而略有不同。</p>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="install-step__head"><span class="install-step__num">步驟 4 / 4</span><h3 class="install-step__title">接工具，跑你第一個 prompt</h3><span class="install-step__time">⏱ 約 5 分鐘</span></div>
+        <div class="install-step__block install-step__block--do">
+          <p class="install-step__sub">👉 你要做什麼</p>
+          <ol>
+            <li>在對話框輸入 <code class="recipe__cmd">/smb-onboard</code>（或對它說「get me started」）。</li>
+            <li>它會問你想接哪個工具，選你最常用的一個（QuickBooks／HubSpot／Canva／Slack…）。</li>
+            <li>跳出 OAuth 登入頁，用該服務帳號登入並按「允許」（隨時可撤回，跟用 Google 登入其他網站一樣）。</li>
+            <li>到下方<a href="#cookbook">食譜書</a>找你的身份，複製 prompt 貼上、按 Enter。</li>
+          </ol>
+        </div>
+        <div class="install-step__block install-step__block--see">
+          <p class="install-step__sub">👀 你會看到什麼</p>
+          <p>Claude 開始一步步幫你做事。每個重要動作（寄信、扣款、改資料）前都會問你 Yes／No，按 Yes 它才會做 —— 你永遠在最後一關。</p>
+        </div>
+        <div class="install-step__block install-step__block--stuck">
+          <p class="install-step__sub">⚠️ 卡住了？</p>
+          <p>OAuth 授權失敗，確認你登入的是該服務的「管理員／老闆」帳號 —— 員工權限通常不夠 Claude 讀取所有資料。</p>
+        </div>
+      </div>
+
+      <h3 class="section-h" id="cookbook">Prompt 食譜書 —— 選你的身份，複製貼上</h3>
+      <div class="prose"><p>不知道第一句怎麼開口？挑最像你的角色，把下面這段複製到對話框（不用改字），看 Claude 怎麼動。這些是示範，實際工具與資料以你接的為準。</p></div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">🍳 阿明 · 早餐店</span><span class="prompt-card__scene">情境：月底要交資料給會計師，過去自己對帳要 3 小時</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>我月底要交資料給會計師，請幫我：
+1. 從我的記帳系統拉這個月所有收入和支出
+2. 對收款平台的結算紀錄，找出對不起來的差異
+3. 找出變動最大的 3 個食材成本品項
+4. 草擬一封給會計師的損益（P&amp;L）摘要信
+完成後給我看，我確認再寄。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>拉這個月每一筆收支</li>
+            <li>跨平台比對，標出差異較大的項目</li>
+            <li>算食材成本佔比，找出前 3 個異常</li>
+            <li>草擬給會計師的損益摘要信</li>
+            <li>等你按確認，沒同意它不會寄</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">3 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">20 分鐘</span></p>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">💎 小芳 · 手作飾品電商</span><span class="prompt-card__scene">情境：過去兩年 7 月營收最低，想救</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>我做手作飾品電商，過去兩年的 7 月營收最低。請：
+1. 從客戶/訂單資料，找過去 12 個月哪些品項 7 月賣最好
+2. 擬 3 個促銷主題（含目標客群＋優惠方案）
+3. 在 Canva 各做 1 張 IG 主視覺 + 1 張 EDM 圖
+4. 把客戶分 3 群（買過／加過購物車／新訂閱）
+完成後我選一個來跑。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>讀過去 12 個月銷售歷史</li>
+            <li>出 3 個活動主題草案（主題＋客群＋優惠）</li>
+            <li>在 Canva 生出 IG 與 EDM 視覺</li>
+            <li>把客戶分成 3 群名單</li>
+            <li>全部完成後給你選一個發送</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">3 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">30 分鐘</span></p>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">🎬 阿凱 · YouTuber／自媒體</span><span class="prompt-card__scene">情境：收到品牌業配合約，不知道有沒有坑</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>這份業配合約檔案在我的雲端硬碟，請：
+1. 列出所有付款條件（金額、時間、發票要求）
+2. 標出對我不利的條款（獨家期、二創限制、智財權歸屬）
+3. 比較我 3 個月內簽過的其他業配，這份是否異常
+4. 給我 5 個應該跟對方確認的問題
+用紅字標危險、綠字標正常。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>讀合約裡所有條款</li>
+            <li>標出獨家期、二創限制、智財權等危險點</li>
+            <li>比對你過去的合約，找出不合理之處</li>
+            <li>列 5 個帶去談的檢核問題</li>
+            <li>整理成一份審查報告給你</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">審約 1 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">5 分鐘</span></p>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">👩‍🏫 老師娘 · 線上開課</span><span class="prompt-card__scene">情境：800 個學員，想知道誰快流失、誰沒回</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>每天早上 9 點，請給我學員 morning brief：
+1. 過去 24 小時新進的學員＋來源
+2. 進度卡住超過 7 天的學員（誰、卡在哪一課）
+3. 上週留言但我還沒回的問題
+4. 本月即將到期未續訂的學員
+5. 收入：本日／本月累計 vs 目標
+推送到我常用的通訊軟體，不要 email。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>設一個每天 9:00 自動跑的例行任務</li>
+            <li>從課程平台／客戶系統拉學員資料</li>
+            <li>整理 5 項摘要（新進／卡關／未回／到期／收入）</li>
+            <li>推播通知給你</li>
+            <li>你看 30 秒就知道今天該關注誰</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">每天 1 小時整理</span><span class="timesave__arrow">→</span><span class="timesave__to">30 秒看摘要</span></p>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">🧋 阿珍 · 手搖飲／咖啡（多分店）</span><span class="prompt-card__scene">情境：3 家店的營收、成本各自為政，看不到全貌</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>我有 3 家手搖飲店，請每週一給我一份營運摘要：
+1. 彙整 3 家店上週營收、客數、客單價，並排名
+2. 比較各店的原物料成本佔比，標出偏高的店
+3. 找出哪些品項在哪家店特別好賣／特別差
+4. 列出本週需要我注意的 3 件事
+做成一頁摘要，重點用條列。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>跨 3 家店彙整營收與客數</li>
+            <li>算各店成本佔比、抓出異常</li>
+            <li>找出品項在不同店的表現差異</li>
+            <li>整理出本週待辦重點</li>
+            <li>輸出一頁可快速看完的摘要</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">每週彙整 2 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">15 分鐘</span></p>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">💅 Vivi · 個人工作室（美甲／美容）</span><span class="prompt-card__scene">情境：客人預約、回診全靠手記，常漏掉該回訪的客人</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>我經營一間美甲工作室，請幫我：
+1. 整理這個月的預約清單，標出尚未確認的時段
+2. 找出超過 6 週沒回訪的老客戶，草擬一則回訪邀約訊息
+3. 把客戶分成（高頻／一般／久未回訪）三群
+4. 針對久未回訪那群，擬一個回娘家優惠方案
+訊息口氣要親切、像朋友，完成後我確認再發。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>整理預約、標出未確認時段</li>
+            <li>抓出久未回訪的客戶名單</li>
+            <li>把客戶分成 3 群</li>
+            <li>草擬回訪訊息與優惠方案</li>
+            <li>等你確認再發送</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">每週整理客戶 90 分鐘</span><span class="timesave__arrow">→</span><span class="timesave__to">15 分鐘</span></p>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">🎨 阿哲 · 接案設計師／SOHO</span><span class="prompt-card__scene">情境：報價、合約、追尾款全卡在自己身上</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>我是接案設計師，請幫我：
+1. 檢視這份客戶合約，標出付款條件與對我不利的條款
+2. 比對我過去的報價，這個專案報價是否合理
+3. 列出目前所有「已交件但尚未收款」的案子，依金額排序
+4. 為逾期最久的那筆，草擬一封禮貌但明確的請款信
+完成後給我看，我確認再寄。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>審合約、標出風險條款與付款條件</li>
+            <li>對照歷史報價，判斷是否合理</li>
+            <li>列出未收款案子並排序</li>
+            <li>草擬請款信</li>
+            <li>等你確認再寄出</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">審約＋對帳 2 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">20 分鐘</span></p>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-card__head"><span class="prompt-card__persona">📚 主任 · 補習班／才藝班</span><span class="prompt-card__scene">情境：繳費、出席、家長訊息一團亂，招生季又快到</span></div>
+        <div class="prompt-card__box">
+          <button class="prompt-card__copy" type="button" aria-label="複製 prompt">複製</button>
+          <pre class="prompt-card__pre"><code>我經營一間才藝補習班，請幫我：
+1. 整理本月學費繳費狀況，列出尚未繳費的學生與金額
+2. 找出近兩週缺席超過 2 次的學生，提醒我關心
+3. 整理家長群組裡我還沒回覆的問題
+4. 為下個月的招生，擬 3 個推廣主題＋一張 Canva 宣傳圖
+追繳與招生訊息都先草擬，我確認再發。</code></pre>
+        </div>
+        <div class="prompt-card__does">
+          <p class="prompt-card__label">✨ Claude 會做什麼</p>
+          <ol>
+            <li>整理繳費狀況、列出未繳名單</li>
+            <li>抓出高缺席學生提醒你</li>
+            <li>整理家長未回覆訊息</li>
+            <li>擬招生主題並在 Canva 出圖</li>
+            <li>追繳與招生訊息都等你確認</li>
+          </ol>
+        </div>
+        <p class="timesave"><span class="timesave__from">每週行政 3 小時</span><span class="timesave__arrow">→</span><span class="timesave__to">30 分鐘</span></p>
+      </div>
+    </section>
+
+    <!-- ====== Roadmap ====== -->
+    <section class="section" id="roadmap">
+      <header class="chapter__head">
+        <p class="chapter__num">下一步</p>
+        <h2 class="chapter__title">三條路徑，挑你現在的那一條</h2>
+        <p class="chapter__sub">不用全部做完。從你那條路徑的第一件事開始 —— 動手一件，比讀完整份導讀更重要。</p>
+      </header>
+
+      <div class="stage">
+        <div class="stage__block">
+          <p class="stage__block-label">想先確認值不值得</p>
+          <h3>免費試水溫</h3>
+          <ol>
+            <li>看官方產品頁的示範（5 分鐘）</li>
+            <li>註冊 AI Fluency 免費課程，看第一堂（30 分鐘）</li>
+            <li>對照<a href="#p06">「找到自己」</a>，估你能省幾小時</li>
+          </ol>
+        </div>
+        <div class="stage__block">
+          <p class="stage__block-label">已有 Claude 付費方案</p>
+          <h3>今晚就能裝</h3>
+          <ol>
+            <li>照<a href="#p09">第 10 章</a>四步驟把 plugin 開起來</li>
+            <li>到<a href="#cookbook">食譜書</a>找你的身份複製 prompt</li>
+            <li>貼上按 Enter，第一個工作流就跑起來</li>
+          </ol>
+        </div>
+        <div class="stage__block stage__block--wide">
+          <p class="stage__block-label">想找夥伴一起玩</p>
+          <h3>不用一個人摸索</h3>
+          <ul>
+            <li>找你做早餐店／電商／自媒體的朋友一起試，互相對照心得</li>
+            <li>加入台灣的 Claude／AI 工具社群，卡關時有人帶，比自己 Google 快很多</li>
+            <li>把跑通的 prompt 存成自己的「食譜本」，下次直接用</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="closing">
+        <span class="closing__rule" aria-hidden="true"></span>
+        <p class="closing__title">你的店，一個人也能撐起 10 人份。</p>
+        <p class="closing__sub">差別只在於：你願不願意花一個週末，把對照關係建立起來。建立了，剩下的就交給那個 24 小時不睡的兼職。</p>
+      </div>
+    </section>
+
+    <!-- ====== Sources ====== -->
+    <section class="section" id="sources">
+      <header class="chapter__head">
+        <p class="chapter__num">查核</p>
+        <h2 class="chapter__title">資料來源</h2>
+        <p class="chapter__sub">本導讀為非官方整理，內容經查證；產品細節、價格以官方頁面為準，存疑處已於文中標註。</p>
+      </header>
+
+      <div class="resources">
+        <a class="resource" href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener">
+          <span class="resource__num">01</span>
+          <span><span class="resource__title">Anthropic — Introducing Claude for Small Business</span><span class="resource__desc">官方發布文（2026-05-13）· 本導讀主架構出處</span></span>
+          <span class="resource__arrow">↗</span>
+        </a>
+        <a class="resource" href="https://claude.com/solutions/small-business" target="_blank" rel="noopener">
+          <span class="resource__num">02</span>
+          <span><span class="resource__title">產品頁 · Solutions</span><span class="resource__desc">工作流、整合工具、起步流程</span></span>
+          <span class="resource__arrow">↗</span>
+        </a>
+        <a class="resource" href="https://claude.com/plugins/small-business" target="_blank" rel="noopener">
+          <span class="resource__num">03</span>
+          <span><span class="resource__title">Cowork Plugin 說明</span><span class="resource__desc">如何安裝與啟用 Small Business plugin</span></span>
+          <span class="resource__arrow">↗</span>
+        </a>
+        <a class="resource" href="https://claude.com/pricing" target="_blank" rel="noopener">
+          <span class="resource__num">04</span>
+          <span><span class="resource__title">方案與定價</span><span class="resource__desc">Pro／Max／Team／Enterprise（價格以此為準）</span></span>
+          <span class="resource__arrow">↗</span>
+        </a>
+        <a class="resource" href="https://trust.anthropic.com" target="_blank" rel="noopener">
+          <span class="resource__num">05</span>
+          <span><span class="resource__title">Anthropic 信任中心</span><span class="resource__desc">資料安全與合規認證（SOC 2、ISO、HIPAA、GDPR）</span></span>
+          <span class="resource__arrow">↗</span>
+        </a>
+        <a class="resource" href="https://anthropic.skilljar.com/ai-fluency-for-small-businesses" target="_blank" rel="noopener">
+          <span class="resource__num">06</span>
+          <span><span class="resource__title">AI Fluency for Small Business（免費課程）</span><span class="resource__desc">9 堂課、約 54 分鐘、免帳號、完課發證書</span></span>
+          <span class="resource__arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="prose">
+        <p><small>本站為個人製作的白話導讀，與 Anthropic 無隸屬關係。引用之客戶見證、引言皆出自 Anthropic 官方案例。內容若與官方最新資訊不符，以官方為準。</small></p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span>Claude for Small Business · 台灣老闆白話導讀 · 2026</span>
+    <span>非官方整理 · 內容經查證，以 <a href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener">官方發布文</a> 為準</span>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -105,7 +105,15 @@ claude-small-business/
 3. 連接你最常用的 1 個工具（OAuth 授權）。
 4. 跑 `/smb-onboard`（或說「get me started」）→ 複製情境 prompt 開跑。
 
-4 個情境 prompt（重寫，台灣角色）：早餐店月結 / 手作電商弱月救援 / YouTuber 業配合約審查 / 線上開課學員 morning brief。每個含「你貼的 prompt」「Claude 會做什麼」「省時對照」。
+8 個情境 prompt（重寫，台灣角色）。每個含「你貼的 prompt」「Claude 會做什麼」「省時對照」：
+1. 🍳 阿明 · 早餐店 — 月結對帳交會計師
+2. 💎 小芳 · 手作飾品電商 — 弱月救援 campaign
+3. 🎬 阿凱 · YouTuber/自媒體 — 業配合約審查
+4. 👩‍🏫 老師娘 · 線上開課 — 學員 morning brief
+5. 🧋 阿珍 · 手搖飲/咖啡（多分店） — 各店營收對帳 + morning brief + 毛利
+6. 💅 Vivi · 個人工作室（美甲/美容/按摩） — 預約 + 回診提醒 + 客戶分群
+7. 🎨 阿哲 · 接案設計師/SOHO — 報價/合約審查 + 追尾款
+8. 📚 主任 · 補習班/才藝班 — 繳費追蹤 + 招生 campaign + 家長未回訊息
 
 ---
 

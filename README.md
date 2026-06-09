@@ -3,8 +3,8 @@
 把 Anthropic 在 2026-05-13 發布的 **Claude for Small Business**，用生活比喻翻成「沒有 IT 部門的台灣小老闆」也聽得懂的話 —— 一份中英雙語、互動式、編輯風格的單頁導讀網站。
 
 > 🌐 **線上瀏覽**
-> - 中文：<https://tingwei161803.github.io/claude-small-business/>
-> - English：<https://tingwei161803.github.io/claude-small-business/en/>
+> - 中文：<https://claude-small-business.peteraim.com/>
+> - English：<https://claude-small-business.peteraim.com/en/>
 
 ---
 

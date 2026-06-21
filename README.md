@@ -3,8 +3,8 @@
 把 Anthropic 在 2026-05-13 發布的 **Claude for Small Business**，用生活比喻翻成「沒有 IT 部門的台灣小老闆」也聽得懂的話 —— 一份中英雙語、互動式、編輯風格的單頁導讀網站。
 
 > 🌐 **線上瀏覽**
-> - 中文：<https://claude-small-business.peteraim.com/>
-> - English：<https://claude-small-business.peteraim.com/en/>
+> - English：<https://claude-small-business.peteraim.com/>
+> - 中文：<https://claude-small-business.peteraim.com/zh-Hant/>
 
 ---
 
@@ -25,7 +25,7 @@
 
 | 功能 | 說明 |
 |------|------|
-| 🌏 中英雙語 | 分頁式（`index.html` ↔ `en/index.html`），右上角 `[中｜EN]` 切換並在桌機保留當前章節 |
+| 🌏 中英雙語 | 分頁式（`index.html` 英文 ↔ `zh-Hant/index.html` 中文），右上角 `[中｜EN]` 切換並在桌機保留當前章節 |
 | 📑 互動目錄 | 左側 sticky TOC，捲動時自動高亮當前章節；行動版可收合 |
 | 📈 閱讀進度條 | 頂部進度條反映捲動位置 |
 | 📋 一鍵複製 | 8 個情境 prompt 皆可一鍵複製（中英自動切換按鈕文字） |
@@ -73,9 +73,9 @@
 
 ```
 claude-small-business/
-├── index.html              # 中文版（主頁，lang="zh-Hant"）
-├── en/
-│   └── index.html          # English 版（lang="en"，資源路徑用 ../assets/）
+├── index.html              # 英文版（主頁，lang="en"）
+├── zh-Hant/
+│   └── index.html          # 中文版（lang="zh-Hant"，資源路徑用 ../assets/）
 ├── assets/
 │   ├── styles.css          # 樣式系統（共用元件 + tw-note/recipe/flow/timesave/install-step/prompt-card/warn）
 │   └── app.js              # 進度條 / TOC / 雙語 hash / 產品名高亮 / 複製鈕 / GitHub 星數
@@ -98,9 +98,9 @@ open index.html          # macOS
 若要用本機伺服器（例如測試雙語相對路徑）：
 
 ```bash
-python3 -m http.server 8000
-# 開 http://localhost:8000/        中文
-# 開 http://localhost:8000/en/     English
+uv run python -m http.server 8000
+# 開 http://localhost:8000/             English
+# 開 http://localhost:8000/zh-Hant/     中文
 ```
 
 ---
@@ -111,7 +111,7 @@ python3 -m http.server 8000
 
 1. Repo → **Settings → Pages**
 2. **Source** 選 `Deploy from a branch`，分支選 `main`、資料夾 `/ (root)`
-3. 等部署完成，即可由 `https://<帳號>.github.io/claude-small-business/` 瀏覽
+3. 等部署完成，即可由自訂網域 `https://claude-small-business.peteraim.com/`（已設 `CNAME`）瀏覽
 
 ---
 
@@ -119,7 +119,7 @@ python3 -m http.server 8000
 
 採**分頁式**而非單頁 JS 切換：
 
-- 中文 `index.html`、英文 `en/index.html` 各自獨立
+- 英文 `index.html`、中文 `zh-Hant/index.html` 各自獨立
 - 兩頁的章節 `id` 與 CSS class **完全一致**，只有文字不同
 - 右上角切換：桌機（≥961px）會帶上當前 `#hash`，停在同一章；行動版回到頁首
 - 複製按鈕文字依 `document.documentElement.lang` 自動切換（`複製/已複製` ↔ `Copy/Copied`）

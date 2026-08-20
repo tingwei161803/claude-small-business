@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tingwei161803.github.io/claude-small-business/sitemap.xml
+Sitemap: https://claude-small-business.peteraim.com/sitemap.xml
